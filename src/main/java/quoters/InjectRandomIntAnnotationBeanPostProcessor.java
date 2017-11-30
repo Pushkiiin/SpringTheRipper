@@ -8,7 +8,7 @@ import java.lang.reflect.Field;
 import java.util.Random;
 
 public class InjectRandomIntAnnotationBeanPostProcessor implements BeanPostProcessor {
-    public Object postProcessBeforeInitialization(Object bean, String s) throws BeansException {
+    public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
         Field[] fields = bean.getClass().getDeclaredFields();
         for (Field field : fields) {
             InjectRandomInt annotation = field.getAnnotation(InjectRandomInt.class);
