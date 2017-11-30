@@ -18,7 +18,7 @@ public class InjectRandomIntAnnotationBeanPostProcessor implements BeanPostProce
                 Random random = new Random();
                 int i = min + random.nextInt(max - min);
                 field.setAccessible(true);
-                ReflectionUtils.setField(field, bean, i);
+                ReflectionUtils.setField(field, bean, i);   //used instead of manual setter not to deal with exceptions
             }
         }
         return bean;
